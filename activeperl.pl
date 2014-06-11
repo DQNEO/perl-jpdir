@@ -8,4 +8,6 @@ use autodie;
 use Encode;
 use utf8;
 
-rename 'active', Encode::encode('cp932', 'あくてぃぶ');
+my $string = 'あくてぃぶ';
+my $output_enc = 'cp932';
+rename 'active', Encode::encode($output_enc, $string);
