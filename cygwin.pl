@@ -2,5 +2,12 @@
 use strict;
 use warnings;
 use autodie;
+use Encode;
 
-rename 'cygwin', 'しぐうぃん';
+# to utf8 binary
+rename 'a', 'しぐうぃん';
+
+{
+    use utf8;
+    rename 'b', Encode::encode('utf8', 'しぐうぃん２');
+}
