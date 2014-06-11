@@ -4,4 +4,7 @@ use warnings;
 use autodie;
 use Encode;
 use utf8;
-rename 'cygwin', Encode::encode('utf8', 'しぐうぃん２');
+
+my $string = 'しぐうぃん';
+my $output_enc = 'utf8';
+rename 'cygwin', Encode::encode($output_enc, $string);
